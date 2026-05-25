@@ -9,8 +9,8 @@ CFLAGS_COMMON = -Wall -Isrc
 
 # macOS Configurations
 MAC_CC = clang
-MAC_DIR = dist
-MAC_TARGET = $(MAC_DIR)/clickthecat-macos
+MAC_DIR = dist/macos
+MAC_TARGET = $(MAC_DIR)/clickthecat
 MAC_CFLAGS = $(CFLAGS_COMMON) -I/Volumes/Repos/ClickTheCat/raylib-6.0_macos/include
 MAC_LIBS = /Volumes/Repos/ClickTheCat/raylib-6.0_macos/lib/libraylib.a
 MAC_FRAMEWORKS = -framework CoreVideo -framework CoreAudio -framework AudioToolbox \
@@ -19,7 +19,7 @@ MAC_FRAMEWORKS = -framework CoreVideo -framework CoreAudio -framework AudioToolb
 
 # Windows Configurations
 WIN_CC = x86_64-w64-mingw32-gcc
-WIN_DIR = dist
+WIN_DIR = dist/windows
 WIN_TARGET = $(WIN_DIR)/clickthecat.exe
 WIN_CFLAGS = $(CFLAGS_COMMON) -I/Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/include
 WIN_LIBS = /Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/lib/libraylib.a \
@@ -28,7 +28,7 @@ WIN_LIBS = /Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/lib/libraylib.a
 # Web Configurations
 WEB_CC = emcc
 WEB_DIR = dist/web
-WEB_TARGET = $(WEB_DIR)/ctc.html
+WEB_TARGET = $(WEB_DIR)/index.html
 WEB_CFLAGS = $(CFLAGS_COMMON) -I/Volumes/Repos/ClickTheCat/raylib-web/include
 WEB_LIBS = -L/Volumes/Repos/ClickTheCat/raylib-web/lib -lraylib
 WEB_FLAGS = --shell-file /Volumes/AppleSeed/MacOS/cieloforge/dev/raylib/raylib/src/shell.html \
