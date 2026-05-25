@@ -1,5 +1,4 @@
 # Click the Cat
-
 A simple "Click the Cat" game developed for **Garbage Jam #4** using **C** and **Raylib**.
 
 ## Gameplay
@@ -24,21 +23,16 @@ A simple "Click the Cat" game developed for **Garbage Jam #4** using **C** and *
 ### Building
 1. Clone this repository
 2. Install Raylib on your system
-3. Compile the game:
-
-```bash
-gcc -o clickthecat src/main.c src/game.c src/player.c src/cat.c src/audio.c -lraylib -lm
-```
-
-Or if you have a Makefile:
-```bash
-make
-```
+3. Build using the provided Makefile:
+   ```bash
+   make
+   ```
+   The Makefile generates executables in the `dist/` directory for macOS, Windows, and Web.
 
 ### Running
-```bash
-./clickthecat
-```
+- **macOS**: `./dist/clickthecat-macos`
+- **Windows**: `dist\clickthecat.exe`
+- **Web**: Open `dist/web/ctc.html` in a browser
 
 ## Controls
 - **WASD** - Move the cat
@@ -74,5 +68,4 @@ Can be found within the Docs folder in Licenses
 **CieloForge** - https://cieloforge.itch.io | https://github.com/cieloforge
 
 ---
-
 *Last updated: 2026-05-25*
