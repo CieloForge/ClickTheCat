@@ -1,0 +1,4 @@
+x86_64-w64-mingw32-gcc -Wall src/main.c src/cat.c src/player.c src/game.c src/audio.c -o build/clickthecat.exe \
+-Isrc -I/Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/include \
+/Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/lib/libraylib.a \
+-lwinmm -lgdi32 -lopengl32 -lcomdlg32 -lole32

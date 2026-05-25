@@ -1,0 +1,4 @@
+zig cc -target x86_64-linux-gnu -Wall src/main.c src/cat.c src/player.c src/game.c src/audio.c -o dist/clickthecat-linux \
+-Isrc -I/Volumes/Repos/ClickTheCat/raylib-6.0_linux_amd64/include \
+/Volumes/Repos/ClickTheCat/raylib-6.0_linux_amd64/lib/libraylib.a \
+-lGL -lm -lpthread -ldl -lrt -lX11

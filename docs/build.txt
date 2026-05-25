@@ -1,0 +1,46 @@
+# Source files (shared between both platforms)
+SRCS = src/main.c src/cat.c src/player.c src/game.c src/audio.c
+
+# Common flags
+CFLAGS_COMMON = -Wall -Isrc
+
+# macOS Configurations
+MAC_CC = clang
+MAC_DIR = dist
+MAC_TARGET = $(MAC_DIR)/clickthecat-macos
+MAC_CFLAGS = $(CFLAGS_COMMON) -I/Volumes/Repos/ClickTheCat/raylib-6.0_macos/include
+MAC_LIBS = /Volumes/Repos/ClickTheCat/raylib-6.0_macos/lib/libraylib.a
+MAC_FRAMEWORKS = -framework CoreVideo -framework CoreAudio -framework AudioToolbox \
+                 -framework AVFoundation -framework OpenAL -framework IOKit \
+                 -framework Cocoa -framework GLUT -framework OpenGL
+
+# Windows Configurations
+WIN_CC = x86_64-w64-mingw32-gcc
+WIN_DIR = build
+WIN_TARGET = $(WIN_DIR)/clickthecat.exe
+WIN_CFLAGS = $(CFLAGS_COMMON) -I/Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/include
+WIN_LIBS = /Volumes/Repos/ClickTheCat/raylib-6.0_win64_mingw-w64/lib/libraylib.a \
+           -lwinmm -lgdi32 -lopengl32 -lcomdlg32 -lole32
+
+# Default rule builds both platforms
+all: macos windows
+
+# macOS Build Rule
+macos: $(MAC_TARGET)
+
+$(MAC_TARGET): $(SRCS)
+	@mkdir -p $(MAC_DIR)
+	$(MAC_CC) $(MAC_CFLAGS) $(SRCS) $(MAC_LIBS) $(MAC_FRAMEWORKS) -o $(MAC_TARGET)
+
+# Windows Build Rule
+windows: $(WIN_TARGET)
+
+$(WIN_TARGET): $(SRCS)
+	@mkdir -p $(WIN_DIR)
+	$(WIN_CC) $(WIN_CFLAGS) $(SRCS) $(WIN_LIBS) -o $(WIN_TARGET)
+
+# Clean rule for both directories
+clean:
+	rm -rf $(MAC_DIR) $(WIN_DIR)
+
+.PHONY: all macos windows clean

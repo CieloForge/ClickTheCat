@@ -1,0 +1,4 @@
+feat: initial project setup
+
+Add project structure, source files, documentation, build system, and 
+raylib dependencies for multiple platforms.

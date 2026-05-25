@@ -1,0 +1,1 @@
+emcc src/main.c src/cat.c src/player.c src/game.c src/audio.c -o dist/web/ctc.html --shell-file /Volumes/AppleSeed/MacOS/cieloforge/dev/raylib/raylib/src/shell.html -Isrc -I/Volumes/Repos/ClickTheCat/raylib-web/include -L/Volumes/Repos/ClickTheCat/raylib-web/lib -lraylib -s USE_GLFW=3 -s ASYNCIFY --preload-file src -s TOTAL_MEMORY=33554432
