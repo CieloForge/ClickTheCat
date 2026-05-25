@@ -402,9 +402,9 @@ cython_debug/
 .abstra/
 
 # Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore
 #   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, 
+#   and can be added to the global gitignore or merged into this file. However, if you prefer,
 #   you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 # Temporary file for partial code execution
@@ -423,3 +423,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raylibs
+raylib-6.0_macos/
+raylib-6.0_win64_mingw-w64/
+raylib-6.0_linux_amd64/
+raylib-web/
